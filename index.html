@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع بورتفوليو شخصي احترافي">
+    <title>هبة اليحيى | Heba Alyahia</title>
+
+    <!-- خطوط جوجل (Cairo) لدعم اللغة العربية بشكل أنيق -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ملف التنسيق -->
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <!-- 🧭 Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- الشعار (Logo) كصورة -->
+            <a href="#" class="logo-container">
+                <img src="logo.svg" alt="شعار الموقع" class="logo-img">
+            </a>
+
+            <!-- قائمة التنقل -->
+            <nav class="nav-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#services">الخدمات والحلول</a>
+                <a href="portfolio.html">أبرز الأعمال</a>
+                <a href="#contact">تواصل معنا</a>
+                <!-- زر تبديل اللغة -->
+                <a href="index-en.html" class="lang-switch">English</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- 🔝 الصفحة الرئيسية (Hero Section) -->
+    <section id="hero" class="hero section">
+        <div class="hero-bg-img"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="title">هبة اليحيى</h1>
+                <h2 class="subtitle">حضور يُصنع.. ليبقى</h2>
+                <p class="description">
+                    نبني العلامة عبر الهوية، والمحتوى، والتجربة!
+                </p>
+                <div class="hero-buttons">
+                    <a href="portfolio.html" class="btn btn-primary">عرض أعمالنا</a>
+                    <a href="#contact" class="btn btn-secondary btn-contact">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👤 قسم "من أنا" (About Me) -->
+    <section id="about" class="about section bg-alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>من نحن</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>هبة اليحيى</h3>
+                    <p>
+                        هبة اليحيى: شريكك الاستراتيجي في صناعة الظهور لعلامتك التجارية في القطاع العقاري والمالي والاستثماري عبر حلول متكاملة تشمل بناء وتطوير العلامة التجارية، وصناعة التوجهات الإبداعية، تطوير الاستراتيجيات والخطط، صناعة وإدارة المحتوى، وتصميم تجارب تفاعلية تعكس هوية العلامة وتخلق أثرًا لا يُنسى.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💼 قسم الحلول / الباقات (Services / Pricing) -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header">
+                <h2>الخدمات والحلول</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- حل 1 -->
+                <div class="card pricing-card">
+                    <div class="service-icon">
+                        <img src="line.svg" alt="Service Line">
+                    </div>
+                    <div class="card-header">
+                        <h3><strong>(بناء وتطوير العلامة التجارية)</strong></h3>
+                    </div>
+                    <p class="card-desc">بما في ذلك تطوير المنظومة البصرية والتعبيرية، وصياغة التوجهات الإبداعية.</p>
+                    <a href="#contact" class="btn btn-outline btn-full">اطلب الخدمة</a>
+                </div>
+
+                <!-- حل 2 -->
+                <div class="card pricing-card featured">
+                    <div class="service-icon">
+                        <img src="line.svg" alt="Service Line">
+                    </div>
+                    <div class="card-header">
+                        <h3><strong>(تطوير الاستراتيجيات وتصميم وصناعة المحتوى)</strong></h3>
+                    </div>
+                    <p class="card-desc">وإدارته بجميع أشكاله على مختلف الوسائط الرقمية والمطبوعة.</p>
+                    <a href="#contact" class="btn btn-primary btn-full">اطلب الخدمة</a>
+                </div>
+
+                <!-- حل 3 -->
+                <div class="card pricing-card">
+                    <div class="service-icon">
+                        <img src="line.svg" alt="Service Line">
+                    </div>
+                    <div class="card-header">
+                        <h3><strong>(تصميم التجارب التفاعلية والإبداعية)</strong></h3>
+                    </div>
+                    <p class="card-desc">بما في ذلك تجارب إطلاق المشاريع والتعريف بها؛ مما يعزز حضور العلامة.</p>
+                    <a class="btn btn-outline btn-full btn-soon">قريبًا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💼 قسم أبرز الأعمال (Portfolio Preview) -->
+    <section class="portfolio-home section bg-alternate">
+        <div class="container">
+            <div class="section-header">
+                <h2>أبرز الأعمال</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="projects/masharif.html">
+                        <div class="portfolio-image">
+                            <img src="masharif cover.png" alt="مشارف الإعمار">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>مشارف الإعمار للتطوير العقاري</h3>
+                                    <p>صناعة محتوى وتصميم مواد تسويقية وإعلانية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="projects/tanmya.html">
+                        <div class="portfolio-image">
+                            <img src="Tanmya cover.png" alt="شركة تنمية">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>شركة تنمية</h3>
+                                    <p>صناعة محتوى وتصميم هوية بصرية ومواد تسويقية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="projects/hulal.html">
+                        <div class="portfolio-image">
+                            <img src="Hulal cover-04.png" alt="حلل العقارية">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>حلل العقارية</h3>
+                                    <p>تصميم الهوية البصرية وصناعة مواد تسويقية وإعلانية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-home view-all">
+                <a href="portfolio.html" class="btn btn-primary">عرض أبرز الأعمال</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🤝 قسم الشركاء (Partners Logos - Animation) -->
+    <section class="partners section">
+        <div class="container">
+            <div class="section-header center">
+                <p>شركاء النجاح</p>
+            </div>
+
+            <div class="partners-slider">
+                <div class="partners-track">
+                    <!-- الشعارات (مجموعة 1) -->
+                    <div class="partner-logo"><img src="Untitled-1-13.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-14.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-15.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-16.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-17.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-19.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-20.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-22.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-23.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-24.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-46.png" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-47.png" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-48.png" alt="Partner Logo"></div>
+
+                    <!-- تكرار الشعارات للحركة المستمرة (Infinite Loop) -->
+                    <div class="partner-logo"><img src="Untitled-1-13.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-14.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-15.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-16.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-17.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-19.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-20.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-22.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-23.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-24.svg" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-46.png" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-47.png" alt="Partner Logo"></div>
+                    <div class="partner-logo"><img src="Untitled-1-48.png" alt="Partner Logo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏆 قسم الإنجازات (Achievements) -->
+    <section class="achievements section">
+        <div class="container achievements-content">
+            <h2 class="title">إنجازاتنا في أرقام</h2>
+            <div class="stats-grid">
+                <!-- عداد 1 -->
+                <div class="stat-item">
+                    <span class="stat-number" data-target="680">0</span>
+                    <p class="stat-label">مشروع</p>
+                </div>
+                <!-- عداد 2 -->
+                <div class="stat-item">
+                    <span class="stat-number" data-target="60">0</span>
+                    <p class="stat-label">شريك</p>
+                </div>
+                <!-- عداد 3 -->
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8">0</span>
+                    <p class="stat-label">أعوام من الخبرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 قسم التواصل (Contact) -->
+    <section id="contact" class="contact section bg-alternate">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>تواصل معنا</h2>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="Untitled-1-35.svg" alt="Email">
+                            </div>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>heba.signature@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="Untitled-1-36.svg" alt="Phone">
+                            </div>
+                            <div>
+                                <h4>رقم الهاتف</h4>
+                                <p dir="ltr"><a href="https://wa.me/966548651125" target="_blank">+966 54 865 1125</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="Untitled-1-34.svg" alt="Location">
+                            </div>
+                            <div>
+                                <h4>الموقع</h4>
+                                <p>الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="Untitled-1-37.svg" alt="Working Hours">
+                            </div>
+                            <div>
+                                <h4>ساعات العمل</h4>
+                                <p>الأحد - الخميس: 9 صباحًا - 5 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" action="https://formsubmit.co/heba.signature@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="رسالة جديدة من موقع هبة اليحيى">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://hebaalyahia.com">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" placeholder="كيف يمكنني مساعدتك؟" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo.svg" alt="شعار الموقع" class="logo-img">
+            </div>
+            <p>&copy; 2024 جميع الحقوق محفوظة.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/heba_signature" target="_blank" aria-label="Instagram">
+                    <img src="social-39.svg" alt="Instagram">
+                </a>
+                <a href="https://www.snapchat.com/add/heba_signature" target="_blank" aria-label="Snapchat">
+                    <img src="social-40.svg" alt="Snapchat">
+                </a>
+                <a href="https://x.com/heba_signature" target="_blank" aria-label="X (Twitter)">
+                    <img src="social-38.svg" alt="X">
+                </a>
+                <a href="https://www.behance.net/hebaalyahia" target="_blank" aria-label="Behance">
+                    <img src="social-49.svg" alt="Behance">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Counter Animation Script -->
+    <script>
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText.replace('+', '');
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = '+' + Math.ceil(count + inc);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = '+' + target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(startCounters, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+
+</body>
+
+</html>
