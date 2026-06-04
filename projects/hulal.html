@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="حلل العقارية - تفاصيل المشروع ونطاق العمل والأثر">
+    <title>حلل العقارية | هبة اليحيى</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css?v=4">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo-container">
+                <img src="../logo.svg" alt="شعار الموقع" class="logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html#hero">الرئيسية</a>
+                <a href="../index.html#about">من نحن</a>
+                <a href="../index.html#services">الخدمات والحلول</a>
+                <a href="../portfolio.html" class="active">أبرز الأعمال</a>
+                <a href="../index.html#contact">تواصل معنا</a>
+                <a href="hulal-en.html" class="lang-switch">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-hero" style="background-image: url('../Hulal cover-04.png');">
+        <div class="project-hero-content">
+            <h1>حلل العقارية</h1>
+            <p style="font-size: 1.2rem; color: var(--color-gold-light);">تصميم الهوية البصرية وصناعة مواد تسويقية وإعلانية</p>
+        </div>
+    </section>
+
+    <section class="project-details-sec bg-alternate">
+        <div class="container">
+
+            <a href="../portfolio.html" class="btn-back">
+                <span>&larr;</span> العودة لصفحة الأعمال
+            </a>
+
+            <div class="project-info-container">
+                <div class="project-scope">
+                    <h2>نطاق العمل والأثر المحقق</h2>
+
+                    <div class="scope-item">
+                        <h3>1- تصميم الشعار والهوية البصرية للشركة مع تطبيقات متعددة لها</h3>
+                        <span class="impact-badge">الأثر المحقق</span>
+                        <p>
+                            بناء هوية احترافية متسقة تعكس مكانة الشركة وتعزز ثقة العملاء والشركاء في مختلف نقاط التواصل.
+                        </p>
+                    </div>
+
+                    <div class="scope-item">
+                        <h3>2- صناعة محتوى وتصميم البروشور التسويقي لمشروع حلل 04</h3>
+                        <span class="impact-badge">الأثر المحقق</span>
+                        <p>
+                            إبراز مزايا المشروع بصياغة تسويقية واضحة تدعم قرارات العملاء وترفع من جاذبية الطرح.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <h2>معرض صور المشروع</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-01.png" alt="حلل العقارية - 01">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-02.png" alt="حلل العقارية - 02">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-03.png" alt="حلل العقارية - 03">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects.png" alt="حلل العقارية - 04">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="../logo.svg" alt="شعار الموقع" class="logo-img">
+            </div>
+            <p>&copy; 2024 جميع الحقوق محفوظة - هبة اليحيى.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(el) {
+            const src = el.querySelector('img').src;
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox(e) {
+            if (!e || e.target !== document.getElementById('lightbox-img')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>

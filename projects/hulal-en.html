@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hulal Real Estate - Project details and scope of work">
+    <title>Hulal Real Estate | Heba Alyahia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css?v=4">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index-en.html" class="logo-container">
+                <img src="../logo.svg" alt="Website Logo" class="logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="../index-en.html#hero">Home</a>
+                <a href="../index-en.html#about">About Us</a>
+                <a href="../index-en.html#services">Services</a>
+                <a href="../portfolio-en.html" class="active">Best Works</a>
+                <a href="../index-en.html#contact">Contact Us</a>
+                <a href="hulal.html" class="lang-switch">العربية</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-hero" style="background-image: url('../Hulal cover-04.png');">
+        <div class="project-hero-content">
+            <h1>Hulal Real Estate</h1>
+            <p style="font-size: 1.2rem; color: var(--color-gold-light);">Visual Identity Design & Marketing Materials</p>
+        </div>
+    </section>
+
+    <section class="project-details-sec bg-alternate">
+        <div class="container">
+
+            <a href="../portfolio-en.html" class="btn-back">
+                <span>&larr;</span> Back to Latest Works
+            </a>
+
+            <div class="project-info-container">
+                <div class="project-scope">
+                    <h2>Scope of Work and Achieved Impact</h2>
+
+                    <div class="scope-item">
+                        <h3>1- Logo and visual identity design for the company with multiple applications</h3>
+                        <span class="impact-badge">Achieved Impact</span>
+                        <p>
+                            Building a consistent, professional identity that reflects the company's standing and strengthens client and partner trust across all touchpoints.
+                        </p>
+                    </div>
+
+                    <div class="scope-item">
+                        <h3>2- Content creation and marketing brochure design for Hulal 04 project</h3>
+                        <span class="impact-badge">Achieved Impact</span>
+                        <p>
+                            Highlighting project advantages with clear marketing wording that supports customer decisions and increases the attractiveness of the offering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-01.png" alt="Hulal Projects - 01">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-02.png" alt="Hulal Projects - 02">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects-03.png" alt="Hulal Projects - 03">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="../Hulal Projects.png" alt="Hulal Projects - 04">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="../logo.svg" alt="Website Logo" class="logo-img">
+            </div>
+            <p>&copy; 2024 All Rights Reserved - Heba Alyahia.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(el) {
+            const src = el.querySelector('img').src;
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox(e) {
+            if (!e || e.target !== document.getElementById('lightbox-img')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>
