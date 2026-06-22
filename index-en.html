@@ -25,7 +25,7 @@
             </a>
             
             <!-- قائمة التنقل -->
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
                 <a href="#hero">Home</a>
                 <a href="#about">About Us</a>
                 <a href="#services">Services</a>
@@ -34,6 +34,13 @@
                 <!-- زر تبديل اللغة -->
                 <a href="index.html" class="lang-switch">العربية</a>
             </nav>
+
+            <!-- زر القائمة للجوال -->
+            <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
     </header>
@@ -49,7 +56,7 @@
                     We build your brand through identity, content, and experience.
                 </p>
                 <div class="hero-buttons">
-                    <a href="portfolio-en.html" class="btn btn-primary">View Portfolio</a>
+                    <a href="portfolio-en.html" class="btn btn-secondary btn-contact">View Portfolio</a>
                     <a href="#contact" class="btn btn-secondary btn-contact">Contact Us</a>
                 </div>
             </div>
@@ -89,10 +96,10 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(Brand building and development)</strong></h3>
+                        <h3><strong>Brand Strategy & Development</strong></h3>
                     </div>
-                    <p class="card-desc">including the development of the visual and expressive system and shaping creative directions.</p>
-                    <a href="#contact" class="btn btn-outline btn-full">Order Service</a>
+                    <p class="card-desc">Building distinctive brands through strategic thinking, visual identity systems, and purposeful brand expression.</p>
+                    <a href="#contact" class="btn btn-outline btn-full">Request Service</a>
                 </div>
 
                 <!-- Solution 2 -->
@@ -101,10 +108,10 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(Strategic development, design, and content creation)</strong></h3>
+                        <h3><strong>Content Strategy & Marketing Communications</strong></h3>
                     </div>
-                    <p class="card-desc">and its management in all its forms across various digital and print media.</p>
-                    <a href="#contact" class="btn btn-primary btn-full">Order Service</a>
+                    <p class="card-desc">Creating impactful content and communication solutions that connect audiences with business objectives.</p>
+                    <a href="#contact" class="btn btn-primary btn-full">Request Service</a>
                 </div>
 
                 <!-- Solution 3 -->
@@ -113,10 +120,10 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(Designing interactive & creative experiences)</strong></h3>
+                        <h3><strong>Brand Experience Design</strong></h3>
                     </div>
-                    <p class="card-desc">of brands, including project launch and presentation experiences that strengthen brand presence.</p>
-                    <a class="btn btn-outline btn-full btn-soon">Coming Soon</a>
+                    <p class="card-desc">Designing meaningful brand experiences that inspire engagement and leave lasting impressions.</p>
+                    <a href="#contact" class="btn btn-outline btn-full">Request Service</a>
                 </div>
             </div>
         </div>
@@ -151,6 +158,19 @@
                                 <div class="overlay-content">
                                     <h3>Tanmya Company</h3>
                                     <p>Visual Identity & Marketing Materials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="projects/magna-en.html">
+                        <div class="portfolio-image">
+                            <img src="Magna Cover.png" alt="Magna">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Magna</h3>
+                                    <p>Visual Identity & Marketing Materials Design</p>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +300,7 @@
                     <form class="contact-form" action="https://formsubmit.co/heba.signature@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="New message from Heba Alyahia website">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://hebaalyahia.com">
+                        <input type="hidden" name="_next" id="next-redirect" value="https://hebaalyahia.com/thankyou-en.html">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -356,6 +376,30 @@
         });
 
         counters.forEach(counter => observer.observe(counter));
+
+        // Dynamically set absolute redirect URL for FormSubmit contact form
+        const nextRedirectInput = document.getElementById('next-redirect');
+        if (nextRedirectInput) {
+            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+            nextRedirectInput.value = window.location.origin + basePath + '/thankyou-en.html';
+        }
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
     </script>
 
 </body>

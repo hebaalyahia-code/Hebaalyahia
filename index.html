@@ -27,7 +27,7 @@
             </a>
 
             <!-- قائمة التنقل -->
-            <nav class="nav-links">
+            <nav class="nav-links" id="nav-links">
                 <a href="#hero">الرئيسية</a>
                 <a href="#about">من نحن</a>
                 <a href="#services">الخدمات والحلول</a>
@@ -36,6 +36,13 @@
                 <!-- زر تبديل اللغة -->
                 <a href="index-en.html" class="lang-switch">English</a>
             </nav>
+
+            <!-- زر القائمة للجوال -->
+            <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
     </header>
@@ -51,7 +58,7 @@
                     نبني العلامة عبر الهوية، والمحتوى، والتجربة!
                 </p>
                 <div class="hero-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">عرض أعمالنا</a>
+                    <a href="portfolio.html" class="btn btn-secondary btn-contact">عرض أعمالنا</a>
                     <a href="#contact" class="btn btn-secondary btn-contact">تواصل معنا</a>
                 </div>
             </div>
@@ -91,9 +98,9 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(بناء وتطوير العلامة التجارية)</strong></h3>
+                        <h3><strong>بناء وتطوير العلامات التجارية</strong></h3>
                     </div>
-                    <p class="card-desc">بما في ذلك تطوير المنظومة البصرية والتعبيرية، وصياغة التوجهات الإبداعية.</p>
+                    <p class="card-desc">نطوّر استراتيجيات العلامات التجارية وهوياتها البصرية ومنظوماتها التعبيرية لبناء حضور أكثر وضوحاً وتميزاً.</p>
                     <a href="#contact" class="btn btn-outline btn-full">اطلب الخدمة</a>
                 </div>
 
@@ -103,9 +110,9 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(تطوير الاستراتيجيات وتصميم وصناعة المحتوى)</strong></h3>
+                        <h3><strong>استراتيجيات المحتوى والاتصال التسويقي</strong></h3>
                     </div>
-                    <p class="card-desc">وإدارته بجميع أشكاله على مختلف الوسائط الرقمية والمطبوعة.</p>
+                    <p class="card-desc">نصمم استراتيجيات المحتوى ونطوّر المواد التسويقية والمؤسسية لتعزيز التواصل وتحقيق الأهداف التسويقية.</p>
                     <a href="#contact" class="btn btn-primary btn-full">اطلب الخدمة</a>
                 </div>
 
@@ -115,10 +122,10 @@
                         <img src="line.svg" alt="Service Line">
                     </div>
                     <div class="card-header">
-                        <h3><strong>(تصميم التجارب التفاعلية والإبداعية)</strong></h3>
+                        <h3><strong>تصميم تجارب العلامة التجارية</strong></h3>
                     </div>
-                    <p class="card-desc">بما في ذلك تجارب إطلاق المشاريع والتعريف بها؛ مما يعزز حضور العلامة.</p>
-                    <a class="btn btn-outline btn-full btn-soon">قريبًا</a>
+                    <p class="card-desc">نبتكر تجارب وتفاعلات تعزز حضور العلامة التجارية وتخلق ارتباطاً أكثر تأثيراً مع الجمهور.</p>
+                    <a href="#contact" class="btn btn-outline btn-full">اطلب الخدمة</a>
                 </div>
             </div>
         </div>
@@ -153,6 +160,19 @@
                                 <div class="overlay-content">
                                     <h3>شركة تنمية</h3>
                                     <p>صناعة محتوى وتصميم هوية بصرية ومواد تسويقية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="projects/magna.html">
+                        <div class="portfolio-image">
+                            <img src="Magna Cover.png" alt="مغنى">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>مغنى</h3>
+                                    <p>تصميم هوية بصرية ومواد تسويقية وإعلانية</p>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +303,7 @@
                     <form class="contact-form" action="https://formsubmit.co/heba.signature@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="رسالة جديدة من موقع هبة اليحيى">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://hebaalyahia.com">
+                        <input type="hidden" name="_next" id="next-redirect" value="https://hebaalyahia.com/thankyou.html">
                         <div class="form-group">
                             <label for="name">الاسم الكامل</label>
                             <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
@@ -359,6 +379,30 @@
         });
 
         counters.forEach(counter => observer.observe(counter));
+
+        // Dynamically set absolute redirect URL for FormSubmit contact form
+        const nextRedirectInput = document.getElementById('next-redirect');
+        if (nextRedirectInput) {
+            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+            nextRedirectInput.value = window.location.origin + basePath + '/thankyou.html';
+        }
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
     </script>
 
 </body>

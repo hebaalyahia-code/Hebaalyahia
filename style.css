@@ -11,11 +11,12 @@
   --color-white: #f4ece1;
 
   /* تعديلات الألوان للتصميم الفاتح والفخم */
-  --bg-main: var(--color-ivory);       
+  --bg-main: var(--color-white);       
   --bg-secondary: var(--color-white);  
   --text-main: var(--color-maroon);    /* العناوين والأزرار */
   --text-secondary: var(--color-dark-gray); /* النصوص الفرعية */
   --color-accent: var(--color-gold-muted); 
+  --color-heading: #84816a;
   
   --transition: all 0.3s ease;
   
@@ -71,13 +72,13 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(162, 159, 129, 0.92); /* Match ivory with transparency to fade pattern */
+    background: rgba(244, 236, 225, 0.92); /* Match #f4ece1 with transparency to fade pattern */
     z-index: -1;
     pointer-events: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text-main); 
+    color: var(--color-heading); 
     transition: var(--transition);
 }
 
@@ -115,7 +116,7 @@ img {
 
 .bg-alternate {
     /* خلفية بلون ذهبي فاتح جداً للأقسام البديلة مع نفس الخامة */
-    background-color: rgba(211, 185, 142, 0.15); 
+    background-color: var(--color-white); 
     background-image: url("https://www.transparenttextures.com/patterns/watercolor.png");
 }
 
@@ -165,7 +166,13 @@ img {
     font-family: inherit;
 }
 
-.btn-primary, .btn-secondary, .btn-outline {
+.btn-primary, .btn-outline {
+    background-color: #84816a;
+    color: var(--color-white); 
+    border-color: #84816a;
+}
+
+.btn-secondary {
     background-color: var(--color-dark-gray);
     color: var(--color-white); 
     border-color: var(--color-dark-gray);
@@ -181,6 +188,16 @@ img {
 
 .btn-full {
     width: 100%;
+}
+
+/* Portfolio Page Hero Text Colors */
+.portfolio-hero-section .title,
+.portfolio-hero-section .subtitle {
+    color: #84816a;
+}
+
+.portfolio-hero-section .description {
+    color: #403f3f !important;
 }
 
 /* Contact Button Specific Styles */
@@ -292,7 +309,7 @@ img {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("Gemini_Generated_Image_cj0d9ycj0d9ycj0d.png");
+    background-image: url("office-bg.png");
     background-size: cover;
     background-position: center;
     animation: aboutFloat 30s ease-in-out infinite;
@@ -316,7 +333,7 @@ img {
 
 .hero .subtitle {
     font-size: 1.5rem;
-    color: var(--text-main);
+    color: #4f1e27;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -326,12 +343,14 @@ img {
     line-height: 1.2;
     margin-bottom: 0;
     font-weight: 700;
+    color: #4f1e27;
 }
 
 .hero .description {
     font-size: 1.2rem;
     margin-bottom: 40px;
     max-width: 600px;
+    color: #f4ece1;
 }
 
 .hero-buttons {
@@ -732,6 +751,7 @@ html[lang="en"] .partners-track {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    filter: invert(52%) sepia(12%) saturate(547%) hue-rotate(21deg) brightness(90%) contrast(88%);
 }
 
 .info-item h4 {
@@ -802,7 +822,7 @@ html[lang="en"] .partners-track {
 }
 
 .achievements h2 {
-    color: var(--color-maroon);
+    color: var(--color-heading);
     font-size: 3.5rem;
     margin-bottom: 60px;
     font-weight: 700;
@@ -877,7 +897,7 @@ html[lang="en"] .partners-track {
 .social-links a {
     width: 55px;
     height: 55px;
-    background-color: #4f1e27;
+    background-color: #84816a;
     color: var(--color-white);
     display: flex;
     justify-content: center;
@@ -943,11 +963,70 @@ html[lang="en"] .partners-track {
     }
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 576px) {
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        max-width: 280px;
+        height: 100vh;
+        background-color: rgba(162, 159, 129, 0.98);
+        padding: 90px 30px 40px;
+        gap: 20px;
+        z-index: 1000;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+        overflow-y: auto;
     }
-    
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1045,7 +1124,7 @@ html[lang="en"] .partners-track {
 .scope-item h3 {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    color: var(--color-maroon);
+    color: var(--color-heading);
 }
 
 .scope-item p {
@@ -1072,7 +1151,7 @@ html[lang="en"] .partners-track {
     font-size: 2.1rem;
     margin-bottom: 30px;
     text-align: center;
-    color: var(--color-maroon);
+    color: var(--color-heading);
 }
 
 .gallery-grid {
