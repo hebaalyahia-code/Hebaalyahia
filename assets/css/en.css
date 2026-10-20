@@ -223,3 +223,40 @@ footer .field b.f1{width:70vw;height:40vw;inset-block-end:-28%;inset-inline-end:
   .stage>video{display:none}
   .fill,.link,.social a,.btn{transition:none}
 }
+
+/* ============ profile request form ============ */
+.pform{max-width:820px;margin-block-start:36px;gap:clamp(18px,2.2vw,26px)}
+.frow3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px)}
+.fld .opt{color:var(--ink-faint);font-size:11.5px}
+.pmsg{border:1px solid var(--hair-2);background:rgba(162,159,129,.10);padding:16px 18px}
+.pmsg .k{display:block;font-size:12.5px;color:var(--ink-faint);margin-block-end:6px}
+.pmsg p{color:var(--ink-soft);font-weight:300;font-size:.97rem;line-height:1.95}
+.fnote{font-size:12.5px;color:var(--olive-deep)}
+@media (max-width:880px){ .frow3{grid-template-columns:1fr} }
+.pgtop{padding-block-start:clamp(136px,18vh,210px);padding-block-end:clamp(70px,11vh,150px);min-height:70vh}
+.back{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-faint);transition:color .35s}
+.back:hover{color:var(--olive-deep)}
+.back .a{font-family:var(--lat)}
+.back .a{transform:scaleX(-1)}
+
+/* ============ service details (المزيد) ============ */
+.more{align-self:stretch;max-width:58ch}
+.more>summary{display:inline-flex;align-items:center;gap:9px;cursor:pointer;list-style:none;
+  font-size:13px;color:var(--olive-deep);padding-block:2px;transition:color .35s}
+.more>summary::-webkit-details-marker{display:none}
+.more>summary::marker{content:""}
+.more>summary:hover{color:var(--olive-dark)}
+.more>summary .sign{font-family:var(--lat);font-size:14px;line-height:1;min-width:12px;text-align:center;
+  color:var(--gold);transition:transform .35s}
+.more>summary .sign::after{content:"+"}
+.more[open]>summary .sign::after{content:"\2212"}
+.mlist{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:13px}
+.mlist>li{position:relative;padding-inline-start:19px;color:var(--ink-soft);
+  font-size:.95rem;line-height:1.95}
+.mlist>li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.9em;
+  width:5px;height:5px;border-radius:50%;background:var(--olive)}
+.mlist ul{margin:11px 0 2px;padding:0;list-style:none;display:grid;gap:7px}
+.mlist ul>li{position:relative;padding-inline-start:17px;font-size:.88rem;line-height:1.85;
+  color:rgba(64,63,63,.5)}
+.mlist ul>li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.92em;
+  width:8px;height:1.5px;border-radius:0;background:var(--gold-lo)}

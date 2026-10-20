@@ -52,4 +52,24 @@
     var body = m + '\n\n— ' + n + '\n' + em;
     location.href = 'mailto:' + form.getAttribute('data-to') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
+
+  /* company-profile request: the message body is pre-written, so the visitor
+     only fills in their own contact details */
+  var pform = document.getElementById('profile-form');
+  if (pform) pform.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!pform.reportValidity()) return;
+    var en = document.documentElement.lang === 'en';
+    var n = pform.elements.name.value.trim(),
+        em = pform.elements.email.value.trim(),
+        ph = pform.elements.phone.value.trim();
+    var subject = en ? 'Company profile request \u2014 ' + n : '\u0637\u0644\u0628 \u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u062a\u0639\u0631\u064a\u0641\u064a \u2014 ' + n;
+    var msg = document.getElementById('profile-msg').textContent.trim();
+    var body = msg + '\n\n' + (en ? 'Name: ' : '\u0627\u0644\u0627\u0633\u0645: ') + n
+             + '\n' + (en ? 'Email: ' : '\u0627\u0644\u0628\u0631\u064a\u062f: ') + em
+             + (ph ? '\n' + (en ? 'Mobile: ' : '\u0627\u0644\u062c\u0648\u0627\u0644: ') + ph : '');
+    var note = document.getElementById('profile-note');
+    if (note) note.hidden = false;
+    location.href = 'mailto:' + pform.getAttribute('data-to') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
 })();
