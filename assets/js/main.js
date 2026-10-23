@@ -1,6 +1,22 @@
 (function(){
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; /* motion runs for everyone, by request */
 
+
+  /* silk video: keep it playing even when the phone blocks autoplay
+     (iOS Low Power Mode, data saver). Retry now, on load, when the tab
+     comes back, and on the visitor's first touch/click (a gesture lets it play). */
+  var silk = document.getElementById('silk');
+  if (silk){
+    silk.muted = true; silk.setAttribute('muted',''); silk.playsInline = true;
+    var tryPlay = function(){ if (silk.paused){ var p = silk.play(); if (p && p.catch) p.catch(function(){}); } };
+    tryPlay();
+    silk.addEventListener('loadeddata', tryPlay);
+    silk.addEventListener('pause', function(){ if (!document.hidden) setTimeout(tryPlay, 300); });
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) tryPlay(); });
+    ['touchend','click','pointerup','keydown','scroll'].forEach(function(ev){
+      addEventListener(ev, tryPlay, {passive:true});
+    });
+  }
 
   var hdr = document.getElementById('hdr');
   function s(){ hdr.classList.toggle('solid', scrollY > 40); }
